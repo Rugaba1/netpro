@@ -1,0 +1,53 @@
+-- Create quotation_items table
+CREATE TABLE IF NOT EXISTS quotation_items (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  quotation_id VARCHAR(50) NOT NULL,
+  item_no INT NOT NULL,
+  description TEXT NOT NULL,
+  quantity INT NOT NULL DEFAULT 1,
+  unit_price DECIMAL(15,2) NOT NULL DEFAULT 0.00,
+  discount DECIMAL(5,2) NOT NULL DEFAULT 0.00,
+  price_excl_vat DECIMAL(15,2) NOT NULL DEFAULT 0.00,
+  vat_amount DECIMAL(15,2) NOT NULL DEFAULT 0.00,
+  total_incl_vat DECIMAL(15,2) NOT NULL DEFAULT 0.00,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  INDEX idx_quotation_id (quotation_id)
+);
+
+-- Create proforma_items table
+CREATE TABLE IF NOT EXISTS proforma_items (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  proforma_id VARCHAR(50) NOT NULL,
+  item_no INT NOT NULL,
+  description TEXT NOT NULL,
+  quantity INT NOT NULL DEFAULT 1,
+  unit_price DECIMAL(15,2) NOT NULL DEFAULT 0.00,
+  discount DECIMAL(5,2) NOT NULL DEFAULT 0.00,
+  price_excl_vat DECIMAL(15,2) NOT NULL DEFAULT 0.00,
+  vat_amount DECIMAL(15,2) NOT NULL DEFAULT 0.00,
+  total_incl_vat DECIMAL(15,2) NOT NULL DEFAULT 0.00,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  INDEX idx_proforma_id (proforma_id)
+);
+
+-- Update quotations table structure
+ALTER TABLE quotations 
+ADD COLUMN IF NOT EXISTS customer_id INT,
+ADD COLUMN IF NOT EXISTS total_excl_vat DECIMAL(15,2) DEFAULT 0.00,
+ADD COLUMN IF NOT EXISTS tax_amount DECIMAL(15,2) DEFAULT 0.00,
+ADD COLUMN IF NOT EXISTS total_discount DECIMAL(15,2) DEFAULT 0.00,
+ADD COLUMN IF NOT EXISTS amount_in_letters TEXT,
+ADD COLUMN IF NOT EXISTS valid_until DATE,
+ADD COLUMN IF NOT EXISTS currency VARCHAR(10) DEFAULT 'RWF';
+
+-- Update proforma_invoices table structure
+ALTER TABLE proforma_invoices 
+ADD COLUMN IF NOT EXISTS customer_id INT,
+ADD COLUMN IF NOT EXISTS total_excl_vat DECIMAL(15,2) DEFAULT 0.00,
+ADD COLUMN IF NOT EXISTS tax_amount DECIMAL(15,2) DEFAULT 0.00,
+ADD COLUMN IF NOT EXISTS total_discount DECIMAL(15,2) DEFAULT 0.00,
+ADD COLUMN IF NOT EXISTS amount_in_letters TEXT,
+ADD COLUMN IF NOT EXISTS valid_until DATE,
+ADD COLUMN IF NOT EXISTS currency VARCHAR(10) DEFAULT 'RWF';

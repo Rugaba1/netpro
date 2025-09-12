@@ -1,0 +1,7 @@
+/>
+
+1. In every file that contains  
+   `import { useAccount } from "@/app/layout"`  
+   replace the line with:  
+   ```ts
+   import { useAccount } from "@/lib/account-context"
