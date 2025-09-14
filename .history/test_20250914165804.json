@@ -1,0 +1,115 @@
+{
+    "invoices": [
+        {
+            "id": 2,
+            "company_id": 2,
+            "customer_id": null,
+            "billing_name": "IMPANOSoftwares",
+            "amount_paid": "50",
+            "amount_to_pay": "200",
+            "start_date": "2025-09-14T00:00:00.000Z",
+            "end_date": "2025-09-26T00:00:00.000Z",
+            "created_at": "2025-09-14T14:53:13.000Z",
+            "updated_at": "2025-09-14T14:53:13.000Z",
+            "user_id": null,
+            "status": "partial",
+            "payment_method": "Bank",
+            "invoice_type": "consolidated",
+            "customer": null,
+            "company": {
+                "id": 2,
+                "name": "IMPANOSoftwares",
+                "tin": "888888",
+                "phone": "0791105800",
+                "email": "inganzolabs@gmail.com",
+                "address": "Kamembe",
+                "created_at": "2025-09-14T10:19:09.000Z",
+                "updated_at": "2025-09-14T10:19:09.000Z"
+            },
+            "users": null,
+            "invoice_items": [
+                {
+                    "id": 2,
+                    "master_invoice_id": 2,
+                    "customer_id": 3,
+                    "item_id": 2,
+                    "qty": 1,
+                    "unit_price": "200",
+                    "total_price": "200",
+                    "created_at": "2025-09-14T14:53:13.000Z",
+                    "updated_at": "2025-09-14T14:53:13.000Z",
+                    "user_id": null,
+                    "item": {
+                        "id": 2,
+                        "name": "Computer",
+                        "category_id": 1,
+                        "status": "active",
+                        "product_id": 3,
+                        "quantity": 100,
+                        "supplier_id": 2,
+                        "min_level": 20,
+                        "reorder_level": 5,
+                        "created_at": "2025-09-14T10:50:55.000Z",
+                        "updated_at": "2025-09-14T14:01:13.000Z",
+                        "user_id": null,
+                        "product": {
+                            "id": 3,
+                            "name": "Del PC",
+                            "package_id": 5,
+                            "price": "800",
+                            "net_price": "200",
+                            "duration": 45,
+                            "type_id": 8,
+                            "created_at": "2025-09-14T07:59:08.000Z",
+                            "updated_at": "2025-09-14T07:59:08.000Z",
+                            "user_id": null,
+                            "Renamedpackage": {
+                                "id": 5,
+                                "type_id": 1,
+                                "description": "kkmkjhujjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjgutyrtrUPDATED2",
+                                "created_at": "2025-09-12T17:01:55.000Z",
+                                "updated_at": "2025-09-12T17:10:46.000Z",
+                                "user_id": null
+                            },
+                            "product_type": {
+                                "id": 8,
+                                "name": "mmmmm",
+                                "created_at": "2025-09-13T20:12:35.000Z",
+                                "updated_at": "2025-09-13T20:12:35.000Z",
+                                "user_id": null
+                            }
+                        },
+                        "supplier": {
+                            "id": 2,
+                            "name": "Impano",
+                            "tin": "15444",
+                            "phone": "0732657995",
+                            "created_at": "2025-09-14T07:13:41.000Z",
+                            "updated_at": "2025-09-14T07:14:03.000Z",
+                            "user_id": null
+                        }
+                    },
+                    "customer": {
+                        "id": 3,
+                        "name": "Impano",
+                        "billing_name": "1204562",
+                        "tin": "154442",
+                        "phone": "(279) 110-5800",
+                        "service_number": "2545455",
+                        "company_id": 2,
+                        "created_at": "2025-09-14T10:45:01.000Z",
+                        "updated_at": "2025-09-14T10:45:01.000Z",
+                        "user_id": null
+                    }
+                }
+            ],
+            "child_invoices": []
+        }
+    ],
+    "pagination": {
+        "page": 1,
+        "limit": 10,
+        "total": 1,
+        "pages": 1
+    }
+}
